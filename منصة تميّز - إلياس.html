@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)file:///C:/Users/LENOVO/Searches/index.html -->
+<html lang="ar" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>منصة تميّز - إلياس</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:sans-serif;
+}
+
+body{
+background:#0b0f19;
+color:white;
+}
+
+/* ===== HEADER ===== */
+header{
+background:linear-gradient(135deg,#1e1b4b,#311042);
+padding:40px;
+text-align:center;
+}
+
+header h1{
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+/* ===== PROFILE ===== */
+.profile{
+max-width:400px;
+margin:20px auto;
+background:#111827;
+padding:20px;
+border-radius:12px;
+border:1px solid #1f2937;
+text-align:center;
+}
+
+.avatar{
+width:90px;
+height:90px;
+margin:auto;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:40px;
+background:linear-gradient(45deg,#3b82f6,#8b5cf6);
+}
+
+.profile h2{
+color:#38bdf8;
+margin-top:10px;
+}
+
+/* ===== GRID ===== */
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#111827;
+padding:20px;
+border-radius:12px;
+border:1px solid #1f2937;
+cursor:pointer;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:#3b82f6;
+}
+
+.card h3{
+color:#38bdf8;
+}
+
+.btn{
+display:inline-block;
+margin-top:10px;
+padding:8px 12px;
+background:#334155;
+border-radius:8px;
+color:white;
+}
+
+/* ===== PAGES ===== */
+.page{
+display:none;
+padding:20px;
+}
+
+.page.active{
+display:block;
+}
+
+.box{
+max-width:800px;
+margin:auto;
+background:#111827;
+padding:20px;
+border-radius:12px;
+}
+
+textarea{
+width:100%;
+height:250px;
+margin-top:15px;
+padding:10px;
+border-radius:10px;
+border:none;
+outline:none;
+font-size:16px;
+}
+
+button{
+margin-top:10px;
+padding:10px 15px;
+background:#3b82f6;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+.back{
+display:inline-block;
+margin-top:20px;
+color:#38bdf8;
+cursor:pointer;
+}
+
+/* ===== FOOTER ===== */
+footer{
+text-align:center;
+padding:20px;
+background:#030712;
+color:#64748b;
+margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HOME ================= -->
+<div id="home" class="page active">
+
+<header>
+<h1>منصة تميّز</h1>
+<p>تعلم، طوّر، واصنع مستقبلك</p>
+
+<div class="profile">
+<div class="avatar">👨‍💻</div>
+<h2>Ilyas</h2>
+<p>مطور ويب </p>
+
+<div class="hero">
+<h2>مرحباً بك في منصة تميّز!</h2>
+<p>انضم إلى مجتمعنا وابدأ رحلتك في عالم البرمجة والتصميم</p>
+
+    
+
+
+
+</div>
+
+<div class="profile-links">
+    
+</div>
+<a href="https://www.instagram.com/ily.asrhm" style="color:#dbdddf;">Instagram</a>
+<a href="http://www.youtube.com/@MorgenCalven" style="color:#e9e9e9;">YouTube</a>
+</div>
+</header></div>
+
+
+<div class="container">
+
+<div class="grid">
+
+<div class="card" onclick="openPage(&#39;projects&#39;)">
+<h3>🚀 المشاريع</h3>
+<div class="btn">ابدأ التعلم</div>
+</div>
+
+<div class="card" onclick="openPage(&#39;marketing&#39;)">
+<h3>📢 التسويق</h3>
+<div class="btn">ابدأ التعلم</div>
+</div>
+
+<div class="card" onclick="openPage(&#39;freelance&#39;)">
+<h3>💻 العمل الحر</h3>
+<div class="btn">اقرأ المزيد</div>
+</div>
+
+</div>
+</div>
+
+<footer>© 2026 منصة تميّز</footer>
+
+
+<!-- ================= CONTENT PAGE ================= -->
+<div id="content" class="page">
+
+<div class="box">
+
+<h2 id="title">💻 نصائح العمل الحر</h2>
+<
+<p>اكتب نصائحك هنا 👇</p>
+
+<textarea id="text-id" placeholder="اكتب نصائحك هنا...">التسويق الناجح لا يدور حول ما تصنه من منتجات بل حول القصص التي ترويها و القيمة الحقيقية لحياة عملائكئك احرص دائما على ان يرى الزائر حل مشكلته </textarea>
+</textarea>
+<button onclick="save()">💾 حفظ</button>
+
+<br>
+
+<span class="back" onclick="goHome()">⬅ العودة للرئيسية</span>
+
+</div>
+</div>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+
+let currentPage = "";
+
+function openPage(type){
+currentPage = type;
+document.getElementById("home").classList.remove("active");
+document.getElementById("content").classList.add("active");
+
+/* العناوين */
+let titles = {
+projects:"🚀 نصائح المشاريع",
+marketing:"📢 نصائح التسويق",
+freelance:"💻 نصائح العمل الحر"
+};
+
+document.getElementById("title").innerText = titles[type];
+
+/* تحميل النص المحفوظ */
+document.getElementById("text-id").value = localStorage.getItem(type) || "";
+}
+
+function save(){
+localStorage.setItem(currentPage, document.getElementById("text-id").value);
+alert("تم الحفظ بنجاح ✅");
+}
+
+function goHome(){
+document.getElementById("content").classList.remove("active");
+document.getElementById("home").classList.add("active");
+}
+
+</script>
+
+
+</body></html>
